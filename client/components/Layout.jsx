@@ -5,9 +5,12 @@ export default function Layout() {
         <>
             <h1>Joshua Desroches Portfolio</h1>
             <nav>
-                <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link
-                to="/education">Education</Link>| <Link to="/project">Project</Link>| <Link
-                to="/contact">Contact</Link>
+                <button onClick={() => window.location.href = "/"}>Home</button> 
+                <button onClick={() => window.location.href = "/education"}>Education</button> 
+                <button onClick={() => window.location.href = "/project"}>Projects</button> 
+                <button onClick={() => window.location.href = "/services"}>Services</button> 
+                <button onClick={() => window.location.href = "/contact"}>Contact</button>
+                <button onClick={() => window.location.href = "/about"}>About</button> 
             </nav>
             <br/>
             <hr />

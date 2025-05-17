@@ -2,10 +2,10 @@ export default function About() {
     return (
     <>
         <h2>About</h2>
-        <div className="AboutContainer">
+        <div className="DualPanelContainer">
             <div className="SelfImg">
                 <img src="./res/Pic of me.jpg" alt="Picture of Joshua D" />
-                <p>Click below to view my Resume<button onClick={() => window.open("./res/Joshua Desroches Resume.pdf", "_blank")}>Open Resume</button></p>
+                <button onClick={() => window.open("./res/Joshua Desroches Resume.pdf", "_blank")}>Open Resume</button>
             </div>
 
             <div className="Description">

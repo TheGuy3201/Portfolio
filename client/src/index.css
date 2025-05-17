@@ -32,18 +32,56 @@
   line-height: 1.1;
   }
   
- .AboutContainer {
+ .DualPanelContainer {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 0.0em;
 }
 
-.SelfImg {
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0;
+.ContactPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left-align content */
+  gap: 1em;
 }
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 12px; /* More rounded edges */
+  border: 2px solid #007bff; /* Blue border */
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  width: 200px;
+  height: 60px;
+}
+
+button:hover {
+  border-color: #646cff;
+  background-color: #525253;
+}
+
+button img {
+  width: 45px;
+  height: 45px;
+}
+
+
+.SelfImg {
+  width: 200px;   /* Smaller width */
+  height: 200px;  /* Smaller height */
+  border-radius: 50%; /* Keeps it circular */
+  object-fit: cover;
+}
+
 
 .SelfImg img {
   width: 100%;
@@ -55,23 +93,9 @@
 .Description {
   flex: 1;
   font-size: 1.5rem;
-  margin: 1rem 0;
+  margin-left: 1.5em;
 }
 
- button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  }
-  button:hover {
-  border-color: #646cff;
-  }
  button:focus,
   button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -82,17 +106,129 @@
   color: #213547;
   background-color: #ffffff;
   }
+
   a:hover {
   color: #747bff;
   }
-  button {
-  background-color: #f9f9f9;
-  }
+
   }
  
+.ServicesPanel {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ServiceCard {
+  width: 300px;
+  height: 350px;
+  perspective: 1000px;
+  cursor: pointer;
+  background-color: #575757;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.ServiceCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.ServiceCard.flipped .ServiceCardInner {
+  transform: rotateY(180deg);
+}
+
+.ServiceCardFront,
+.ServiceCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #7d7d7d;
+}
+
+.ServiceCardFront img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.ServiceCardBack {
+  transform: rotateY(180deg);
+  background-color: #7d7d7d;
+}
+
+.ServiceCardBack button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1159b8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ServiceCardBack button:hover {
+  background-color: #1a73e8;
+}
+
+.Service:hover {
+  transform: translateY(-5px);
+  background-color: #767676;
+
+}
+
+.Service img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
  nav {
-  float: center;
-  font-size:x-large;
- 
- }
+  display: flex;
+  justify-content: left; 
+  gap: 1rem; /* controls space between buttons */
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap; 
+}
+
+nav button {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #11b1e1;
+  cursor: pointer;
+  padding: 0.5em;
+  align-items: center;      /* Vertical centering */
+  justify-content: center;  /* Horizontal centering */
+  display: flex;
+  border-radius: 5px;
+  width: 135px;
+  height: 55px;
+  transition: background-color 0.2s ease;
+}
+
+nav button:hover {
+  background-color: #e6f0ff;
+}
+
  
