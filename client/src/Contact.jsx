@@ -3,7 +3,7 @@ export default function Contact() {
     <>
         <h2>Contact</h2>
         <div className="DualPanelContainer">
-            <div className="ContactPanel">
+            <div className="LeftPanel">
                 <img src="./res/Pic of me.jpg" className="SelfImg" alt="Picture of Joshua D" />
                 {/* Email Address */}
                 <button onClick={() => window.open("mailto:josh.des.21@gmail.com")}>

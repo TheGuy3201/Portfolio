@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 export default function Layout() {
     return (
         <>
-            <h1>Joshua Desroches Portfolio</h1>
+            <div className="header">
+            <h1> &nbsp;&nbsp; Joshua Desroches Portfolio</h1>
             <nav>
                 <button onClick={() => window.location.href = "/"}>Home</button> 
                 <button onClick={() => window.location.href = "/education"}>Education</button> 
@@ -14,6 +15,7 @@ export default function Layout() {
             </nav>
             <br/>
             <hr />
+            </div>
         </>
     );
 }
