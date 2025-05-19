@@ -1,4 +1,15 @@
 export default function Contact() {
+
+    const handleClick = () => {
+    // Get the values from the input fields & store them in variables
+    const fullName = document.getElementById('FullName').value;
+    const email = document.getElementById('Email').value;
+    const message = document.getElementById('Message').value;
+
+    //Future: send values to email to send to me
+    alert('You entered: ' + fullName + ', ' + email + ', ' + message);
+  };
+
     return (
     <>
         <h2>Contact</h2>
@@ -33,8 +44,15 @@ export default function Contact() {
                 
             </div>
 
-            <div className="Description">
-                <p>Soon to contain form</p>
+            <div className="ContactPanel">
+                <h2>Contact Me</h2>
+                <input type="text" id="FullName" placeholder="Enter your full name" />
+                <input type="text" id="Email" placeholder="Enter your email" />
+                <input type="text" id="Message" className="Message" placeholder="Enter your message" />
+
+                <button onClick={handleClick}>Send Message</button>
+                
+
             </div>
         </div>
     </>
