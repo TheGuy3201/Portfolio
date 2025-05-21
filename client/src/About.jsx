@@ -6,7 +6,7 @@ export default function About() {
             <div className="LeftPanel">
                 <img className="SelfImg" src="./res/Pic of me.jpg" alt="Picture of Joshua D" />
                 <button onClick={() => window.open("./res/Joshua Desroches Resume.pdf", "_blank")}>Open Resume</button>
-                <button onClick={() => window.location.href = "/contact"}>Contact Me <img src="https://www.freeiconspng.com/uploads/contact-icon-17.png" alt="Contact Icon" /> </button>
+                <button onClick={() => window.location.href = "/contact"}>Contact Me <img src="https://cdn-icons-png.freepik.com/256/11714/11714679.png?semt=ais_hybrid" alt="Contact Icon" /> </button>
             </div>
 
             <div className="Description">

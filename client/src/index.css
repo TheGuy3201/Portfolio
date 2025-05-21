@@ -2,39 +2,116 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
- 
- color-scheme: light dark;
+  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
- 
- font-synthesis: none;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  }
+  --primary-bg: #232136;
+  --secondary-bg: #2d2a4a;
+  --card-bg: #28264a;
+  --accent-blue: #3e8ed0;
+  --accent-purple: #6443d9;
+  --accent-green: #5aac07;
+  --accent-cyan: #11b1e1;
+  --text-main: #f5f6fa;
+  --text-muted: #b5b5c9;
+  --border: #3e8ed0;
+}
 
- a {
+a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--accent-blue);
   text-decoration: inherit;
-  }
-  a:hover {
-  color: #535bf2;
-  }
- 
- body {
+}
+a:hover {
+  color: var(--accent-purple);
+}
+
+body {
   margin: auto;
-  background-color: #242424;
-  width:980px;
+  background-color: var(--primary-bg);
+  width: 980px;
+  position: relative; /* Needed for pseudo-element positioning */
+  z-index: 1;
+  overflow-x: hidden;
+  color: var(--text-main);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.45;
+  background: linear-gradient(120deg, var(--accent-purple) 0%, var(--accent-cyan) 50%, var(--accent-green) 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 32s ease-in-out infinite; /* Slower animation */
+  filter: blur(32px);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
- 
- h1 {
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  }
+  color: var(--accent-cyan);
+}
 
-  /* Dual Panel Layout seen in Contact & About Me */
- .DualPanelContainer {
+/*Education Page*/
+.EducationPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.EducationCard {
+  padding: 3.5rem;
+  border: 1px solid var(--accent-blue);
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  position: relative; /* Allows positioning of child elements */
+  color: var(--text-main);
+}
+
+.EducationCard h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-green);
+}
+
+.CourseList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute; /* Position relative to the EducationCard */
+  top: 0; /* Align to the top */
+  right: 0; /* Align to the right */
+  margin: 1rem; /* Add some spacing from the edges */
+  text-align: right; /* Align text to the right */
+  color: var(--accent-cyan);
+}
+
+/* Dual Panel Layout seen in Contact & About Me */
+.DualPanelContainer {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -43,10 +120,11 @@
 
 .DualPanelContainer > div {
   padding: 2rem;
-  border: 1px solid #ccc;
-  background-color: #1a1a1a; /* Dark background */
+  border: 1px solid var(--accent-blue);
+  background-color: var(--card-bg); /* Dark background */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  color: var(--text-main);
 }
 
 /* Left side of contact panel & About Me */
@@ -78,9 +156,9 @@
   width: 100%;
   padding: 0.5em;
   border-radius: 12px; /* More rounded edges */
-  border: 2px solid #007bff; /* Blue border */
-  background-color: #1a1a1a;
-  color: #ffffff;
+  border: 2px solid var(--accent-blue); /* Blue border */
+  background-color: var(--secondary-bg);
+  color: var(--text-main);
   font-size: 1.5em;
   font-weight: 500;
 }
@@ -90,14 +168,13 @@
   width: 100%;
   padding: 0.5em;
   border-radius: 12px;
-  border: 2px solid #007bff;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  border: 2px solid var(--accent-blue);
+  background-color: var(--secondary-bg);
+  color: var(--text-main);
   font-size: 1.2em;
   font-family: inherit;
   resize: vertical; /* Optional: allows user to resize vertically */
 }
-
 
 /* General button styles */
 button {
@@ -105,13 +182,13 @@ button {
   align-items: center;
   gap: 0.5em;
   border-radius: 12px; /* More rounded edges */
-  border: 2px solid #007bff; /* Blue border */
+  border: 2px solid var(--accent-blue); /* Blue border */
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  color: #ffffff;
-  background-color: #1a1a1a;
+  color: var(--accent-cyan);
+  background-color: var(--secondary-bg);
   cursor: pointer;
   transition: all 0.25s ease-in-out;
   width: 200px;
@@ -119,8 +196,9 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
-  background-color: #525253;
+  border-color: var(--accent-purple);
+  background-color: var(--accent-blue);
+  color: var(--text-main);
 }
 
 button img {
@@ -128,9 +206,9 @@ button img {
   height: 45px;
 }
 button:focus,
-  button:focus-visible {
+button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-  }
+}
 
 /* About me page styles */
 .SelfImg {
@@ -138,23 +216,35 @@ button:focus,
   height: 200px;  /* Smaller height */
   border-radius: 50%; /* Keeps it circular */
   object-fit: cover;
+  border: 4px solid var(--accent-blue);
 }
 
-
- 
- @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   :root {
-  color: #ffffff;
-  background-color: #242424;
+    color: #ffffff;
+    background-color: #242424;
+    --primary-bg: #f5f6fa;
+    --secondary-bg: #e6e6fa;
+    --card-bg: #e0e7ff;
+    --text-main: #232136;
+    --text-muted: #5a5a6e;
   }
 
   a:hover {
-  color: #747bff;
+    color: #747bff;
   }
 
+  body {
+    color: var(--text-main);
+    background-color: var(--primary-bg);
   }
 
-  /* Services page styles */
+  .header h1 {
+    color: var(--text-main);
+  }
+}
+
+/* Services page styles */
 .ServicesPanel {
   display: flex;
   gap: 2rem;
@@ -167,12 +257,14 @@ button:focus,
   height: 350px;
   perspective: 1000px;
   cursor: pointer;
-  background-color: #575757;
+  background-color: var(--card-bg);
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.2s ease;
+  border: 1px solid var(--accent-blue);
+  color: var(--text-main);
 }
 
 .ServiceCardInner {
@@ -201,7 +293,9 @@ button:focus,
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: #7d7d7d;
+  background: var(--card-bg);
+  border: 1px solid var(--accent-blue);
+  color: var(--text-main);
 }
 
 .ServiceCardFront img {
@@ -213,14 +307,14 @@ button:focus,
 
 .ServiceCardBack {
   transform: rotateY(180deg);
-  background-color: #7d7d7d;
+  background-color: var(--card-bg);
 }
 
 .ServiceCardBack button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #1159b8;
-  color: white;
+  background-color: var(--accent-blue);
+  color: var(--text-main);
   border: none;
   border-radius: 6px;
   font-size: 1rem;
@@ -229,13 +323,13 @@ button:focus,
 }
 
 .ServiceCardBack button:hover {
-  background-color: #1a73e8;
+  background-color: var(--accent-cyan);
+  color: var(--primary-bg);
 }
 
 .Service:hover {
   transform: translateY(-5px);
   background-color: #767676;
-
 }
 
 .Service img {
@@ -248,20 +342,21 @@ button:focus,
 /* Home page styles */
 .missionStatement {
   font-size: 2.2rem;
-  color: #fff;
+  color: var(--text-main);
   text-align: center;
   margin-top: 1rem;
   padding: 2rem;
-  background-color: #1a1a1a; /* Dark background */
+  background-color: var(--card-bg); /* Dark background */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  border: 1px solid var(--accent-blue);
 }
 
 .HomeSelfImg {
   width: 400px;   /* Smaller width */
   height: 400px;  /* Smaller height */
   border-radius: 50%; /* Keeps it circular */
-  border: 4px solid #007bff; /* Blue border */
+  border: 4px solid var(--accent-blue); /* Blue border */
   object-fit: cover;
   justify-content: middle;
   align-items: center;
@@ -269,25 +364,25 @@ button:focus,
   margin: auto;
 }
 
-.RedirectText{
+.RedirectText {
   font-size: 1.6rem;
   margin-top: 7%;
   justify-content: center;
   display: flex;
- }
+}
 
- .RedirectButton{
+.RedirectButton {
   font-size: 2rem;
   justify-content: center;
   display: flex;
   margin: auto;
-  background-color: #11b1e1;
-  color: rgb(3, 47, 69);
-  border-color: #6443d9;
+  background-color: var(--accent-cyan);
+  color: var(--primary-bg);
+  border-color: var(--accent-purple);
   border-radius: 20px;
   width: 30%;
   height: 20%;
- }
+}
 
 .RedirectIcon {
   width: 100px; /* Larger width */
@@ -298,26 +393,56 @@ button:focus,
 
 /* Layout jsx styles */
 .header {
-  background-color: #6443d9;
-  padding: 1rem;
+  background: linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-blue) 60%, var(--accent-cyan) 100%);
+  padding: 2rem 1rem 1.5rem 1rem;
+  border-bottom: 4px solid var(--accent-green);
+  box-shadow: 0 6px 24px 0 rgba(62, 142, 208, 0.18), 0 1.5px 0 var(--accent-cyan) inset;
+  position: relative;
+  border-radius: 0 0 24px 24px;
+  margin-bottom: 2rem;
+  overflow: visible;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  bottom: -18px;
+  width: 120px;
+  height: 18px;
+  background: radial-gradient(ellipse at center, var(--accent-cyan) 0%, transparent 80%);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 2rem;
-  color: white;
-}
-
-.Logo {
-  width: 20%;
-  height: auto;
+  font-size: 2.5rem;
+  color: var(--text-main);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px rgba(62, 142, 208, 0.25), 0 1px 0 var(--accent-purple);
+  position: relative;
+  z-index: 1;
 }
 
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem; /* Adds space between logo-title and nav */
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-title img,
+.logo-title .Logo,
+.logo-title .logo {
+  width: 120px; 
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(62,142,208,0.12);
 }
 
 .nav-bar {
@@ -330,7 +455,7 @@ button:focus,
 .nav-bar button {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #11b1e1;
+  color: var(--accent-cyan);
   cursor: pointer;
   padding: 0.5em;
   text-align: center;
@@ -339,20 +464,19 @@ button:focus,
   transition: background-color 0.2s ease;
 }
 
- nav {
+nav {
   display: flex;
   justify-content: left; 
   gap: 1rem; /* controls space between buttons */
   margin-bottom: 0.6rem;
   margin-left: 4%;
   flex-wrap: wrap; 
-  
 }
 
 nav button {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #11b1e1;
+  color: var(--accent-cyan);
   cursor: pointer;
   padding: 0.5em;
   align-items: center;      /* Vertical centering */
@@ -362,10 +486,14 @@ nav button {
   width: 135px;
   height: 55px;
   transition: background-color 0.2s ease;
+  border: 2px solid var(--accent-blue);
+  background-color: var(--secondary-bg);
 }
 
 nav button:hover {
   background-color: #e6f0ff;
+  border-color: var(--accent-purple);
+  background-color: var(--accent-blue);
+  color: var(--text-main);
 }
 
- 
