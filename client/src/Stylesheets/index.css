@@ -173,7 +173,7 @@ h1 {
   color: var(--text-main);
   font-size: 1.2em;
   font-family: inherit;
-  resize: vertical; /* Optional: allows user to resize vertically */
+  resize: vertical; 
 }
 
 /* General button styles */
@@ -497,3 +497,223 @@ nav button:hover {
   color: var(--text-main);
 }
 
+/* Projects */
+
+.image-gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-bg);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(62,142,208,0.10);
+  padding: 1.5rem 1rem;
+  min-width: 320px;
+  max-width: 420px;
+  flex: 0 0 400px;
+  border: 1.5px solid var(--accent-blue);
+  gap: 0;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(36,33,52,0.55);
+  border: none;
+  color: var(--accent-cyan);
+  font-size: 2.5rem;
+  cursor: pointer;
+  
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, color 0.18s;
+  z-index: 2;
+}
+
+.gallery-arrow.left {
+  left: 10px;
+}
+
+.gallery-arrow.right {
+  right: 10px;
+}
+
+.gallery-arrow:hover,
+.gallery-arrow:focus {
+  background: rgba(100, 67, 217, 0.22);
+  color: var(--accent-purple);
+  outline: none;
+}
+
+.image-gallery img {
+  max-width: 350px;
+  max-height: 260px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(62,142,208,0.18);
+  border: 1.5px solid var(--accent-cyan);
+  background: var(--primary-bg);
+  transition: box-shadow 0.2s;
+  display: block;
+}
+
+.image-gallery img {
+  max-width: 350px;
+  max-height: 260px;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(62,142,208,0.18);
+  border: 1.5px solid var(--accent-cyan);
+  background: var(--primary-bg);
+  transition: box-shadow 0.2s;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .project-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .project-description, .image-gallery {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 1.2rem 1rem;
+  }
+  .image-gallery {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.page-title {
+  font-size: 2.6rem;
+  color: var(--accent-cyan);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-item{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(62,142,208,0.10);
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 1000px;
+  border: 1.5px solid var(--accent-blue);
+  margin-bottom: 2rem;
+}
+
+.project-main {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+}
+
+.project-description{
+  background: var(--secondary-bg);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(62,142,208,0.10);
+  padding: 2rem 2rem;
+  font-size: 1.18rem;
+  color: var(--text-main);
+  text-align: left;
+  flex: 1 1 0;
+  min-width: 0;
+  border: 1.5px solid var(--accent-blue);
+  display: flex;
+  align-items: center;
+}
+
+.roleDescription {
+  background: var(--secondary-bg);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(62,142,208,0.10);
+  padding: 2rem 2rem;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  text-align: left;
+  border: 1.5px solid var(--accent-blue);
+  margin-top: 0;
+}
+
+.page-title {
+  font-size: 2.6rem;
+  color: var(--accent-cyan);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.project-title {
+  font-size: 2rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.2em;
+  margin-top: 0;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.project-subtitle {
+  font-size: 1.1rem;
+  color: var(--accent-purple);
+  margin-bottom: 1.2em;
+  margin-top: 0;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.section-title {
+  font-size: 1.15rem;
+  color: var(--accent-green);
+  margin-bottom: 0.5em;
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.github-btn {
+  margin-top: 1.2rem;
+  padding: 0.6em 1.4em;
+  background: var(--accent-blue);
+  color: var(--text-main);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(62,142,208,0.10);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.github-btn:hover,
+.github-btn:focus {
+  background: var(--accent-purple);
+  color: #fff;
+  outline: none;
+}
