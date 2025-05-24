@@ -4,28 +4,28 @@ export default function Project() {
     // Here is the array of images for each project
     //Backrooms: Into The Subrooms
     const backroomsImages = [
-        { src: "./res/BackroomsGame/Backrooms1.png", alt: "Into The Subrooms 1" },
-        { src: "./res/BackroomsGame/Backrooms2.png", alt: "Into The Subrooms 2" },
-        { src: "./res/BackroomsGame/Backrooms3.png", alt: "Into The Subrooms 3" },
-        { src: "./res/BackroomsGame/Backrooms4.png", alt: "Into The Subrooms 4" },
-        { src: "./res/BackroomsGame/Backrooms5.png", alt: "Into The Subrooms 5" },
+        { src: "/res/BackroomsGame/Backrooms1.png", alt: "Into The Subrooms 1" },
+        { src: "/res/BackroomsGame/Backrooms2.png", alt: "Into The Subrooms 2" },
+        { src: "/res/BackroomsGame/Backrooms3.png", alt: "Into The Subrooms 3" },
+        { src: "/res/BackroomsGame/Backrooms4.png", alt: "Into The Subrooms 4" },
+        { src: "/res/BackroomsGame/Backrooms5.png", alt: "Into The Subrooms 5" },
     ];
 
     //Terminus
     const terminusImages = [
-        { src: "./res/Terminus/Terminus1.jpg", alt: "Terminus Screenshot 1" },
-        { src: "./res/Terminus/Terminus2.jpg", alt: "Terminus Screenshot 2" },
-        { src: "./res/Terminus/Terminus3.jpg", alt: "Terminus Screenshot 3" },
-        { src: "./res/Terminus/Terminus4.jpg", alt: "Terminus Screenshot 4" },
-        { src: "./res/Terminus/Terminus5.jpg", alt: "Terminus Screenshot 5" },
-        { src: "./res/Terminus/Terminus6.jpg", alt: "Terminus Screenshot 6" },
+        { src: "/res/Terminus/Terminus1.jpg", alt: "Terminus Screenshot 1" },
+        { src: "/res/Terminus/Terminus2.jpg", alt: "Terminus Screenshot 2" },
+        { src: "/res/Terminus/Terminus3.jpg", alt: "Terminus Screenshot 3" },
+        { src: "/res/Terminus/Terminus4.jpg", alt: "Terminus Screenshot 4" },
+        { src: "/res/Terminus/Terminus5.jpg", alt: "Terminus Screenshot 5" },
+        { src: "/res/Terminus/Terminus6.jpg", alt: "Terminus Screenshot 6" },
     ];
 
     //MemeDex
     const memeDexImages = [
-        { src: "./res/MemeDexApp/MemeDex1.png", alt: "MemeDex Screenshot 1" },
-        { src: "./res/MemeDexApp/MemeDex2.png", alt: "MemeDex Screenshot 2" },
-        { src: "./res/MemeDexApp/MemeDex3.png", alt: "MemeDex Screenshot 3" },
+        { src: "/res/MemeDexApp/MemeDex1.png", alt: "MemeDex Screenshot 1" },
+        { src: "/res/MemeDexApp/MemeDex2.png", alt: "MemeDex Screenshot 2" },
+        { src: "/res/MemeDexApp/MemeDex3.png", alt: "MemeDex Screenshot 3" },
     ];
 
     // State variables to keep track of the current image index for each project

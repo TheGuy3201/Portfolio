@@ -18,7 +18,7 @@ export default function Contact() {
         <h1>Contact</h1>
         <div className="DualPanelContainer"> {/* Essentially a two column layout page */}
             <div className="LeftPanel"> {/* The left panel with picture of me and buttons to resume and ways to contact me */}
-                <img src="./res/Pic of me.jpg" className="SelfImg" alt="Picture of Joshua D" />
+                <img src="/res/Pic of me.jpg" className="SelfImg" alt="Picture of Joshua D" />
                 {/* Email Address */}
                 <button onClick={() => window.open("mailto:josh.des.21@gmail.com")}>
                     <img src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png" alt="Gmail logo" />

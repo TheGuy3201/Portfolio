@@ -1,4 +1,3 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import About from './components/About'
@@ -12,12 +11,12 @@ const MainRouter = () => {
         <div>
             <Layout/>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/About" element={<About />} />
-                <Route exact path="/Education" element={<Education />} />
-                <Route exact path="/Project" element={<Project />} />
-                <Route exact path="/Contact" element={<Contact />} />
-                <Route exact path="/Services" element={<Services />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/project" element={<Project />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/services" element={<Services />} />
             </Routes>
         </div>
     )
