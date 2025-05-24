@@ -1,8 +1,5 @@
 export default function Contact() {
 
-    // Logic to handle the right side of the contact page
-    // This is where the user can enter their name, email, and message to send to me
-
     const handleClick = () => {
     // Get the values from the input fields & store them in variables
     const fullName = document.getElementById('FullName').value;
@@ -12,12 +9,12 @@ export default function Contact() {
     //Future: send values to email to send to me
     alert('You entered: ' + fullName + ', ' + email + ', ' + message);
   };
+
     return (
     <>
-        {/* Contact page */}
-        <h1>Contact</h1>
-        <div className="DualPanelContainer"> {/* Essentially a two column layout page */}
-            <div className="LeftPanel"> {/* The left panel with picture of me and buttons to resume and ways to contact me */}
+        <h2>Contact</h2>
+        <div className="DualPanelContainer">
+            <div className="LeftPanel">
                 <img src="./res/Pic of me.jpg" className="SelfImg" alt="Picture of Joshua D" />
                 {/* Email Address */}
                 <button onClick={() => window.open("mailto:josh.des.21@gmail.com")}>
@@ -47,7 +44,6 @@ export default function Contact() {
                 
             </div>
 
-            {/* The right panel with a form to enter name, email, and message */}
             <div className="ContactPanel">
                 <h2>Contact Me</h2>
                 <input type="text" id="FullName" placeholder="Enter your full name" />
@@ -55,6 +51,8 @@ export default function Contact() {
                 <input type="text" id="Message" className="Message" placeholder="Enter your message" />
 
                 <button onClick={handleClick}>Send Message</button>
+                
+
             </div>
         </div>
     </>
