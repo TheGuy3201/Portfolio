@@ -74,7 +74,7 @@ export default function Project() {
                             <div>
                                 <h4 className="section-title">Project Overview</h4>
                                 <p>
-                                    Backrooms: Into The Subrooms is a horror game that I created using solely Java. It is a 2D dialog choice game, that gives the player complete freedom to explore a forgotten world, The Subrooms. The player will have the opportunity to discover new rooms, items/weapons, and various endings. The question that remains is, will you survive the hostile subrooms?
+                                    Backrooms: Into The Subrooms, is a horror game I created using solely Java. It is a 2D dialog choice game, that gives the player complete freedom to explore a forgotten world, The Subrooms. The player will have the opportunity to discover new areas, items/weapons, and various endings. The question that remains is, will you survive the hostile subrooms?
                                 </p>
                                 <a
                                     href="https://github.com/TheGuy3201/Backrooms-into-the-Subrooms.git"

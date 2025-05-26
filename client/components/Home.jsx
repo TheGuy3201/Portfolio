@@ -9,9 +9,15 @@ export default function Home() {
     <h2 className="RedirectText">To learn more about me, click either buttons below.</h2>
     {/* Two buttons to redirect to the about me and projects page to kind of guide the user through my website*/}
     <nav>
-        <button className="RedirectButton" onClick={() => window.location.href = "/about"}>About Me <img className="RedirectIcon" src="https://static.vecteezy.com/system/resources/thumbnails/033/882/148/small_2x/transparent-background-person-icon-free-png.png"/> </button>
-        <button className="RedirectButton" onClick={() => window.location.href = "/project"}>My Projects <img className="RedirectIcon" src="https://cdn-icons-png.freepik.com/256/12148/12148631.png?semt=ais_hybrid"/> </button>
+        <button className="RedirectButton" onClick={() => navigateTo("/about")}>About Me <img className="RedirectIcon" src="https://static.vecteezy.com/system/resources/thumbnails/033/882/148/small_2x/transparent-background-person-icon-free-png.png"/> </button>
+        <button className="RedirectButton" onClick={() => navigateTo("/project")}>My Projects <img className="RedirectIcon" src="https://cdn-icons-png.freepik.com/256/12148/12148631.png?semt=ais_hybrid"/> </button>
     </nav>
 </>
 )
+
+function navigateTo(path) {
+        window.history.pushState({}, "", path);
+        const navEvent = new PopStateEvent("popstate");
+        window.dispatchEvent(navEvent);
+    }
 }

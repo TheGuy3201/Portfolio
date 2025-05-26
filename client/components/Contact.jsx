@@ -26,11 +26,10 @@ export default function Contact() {
                 </button>
 
                 {/* Phone Number */}
-                <button onClick={() => window.open("tel:+6473559303")}>
+                <button onClick={() => navigator.clipboard.writeText("+6473559303")}>
                     <img src="https://cdn-icons-png.flaticon.com/512/4367/4367049.png" alt="Phone logo" />
-                    Mobile Phone
+                    Copy Phone Number
                 </button>
-                
 
                 {/* LinkedIn */}
                 <button onClick={() => window.open("https://www.linkedin.com/in/joshua-desroches/")}>
